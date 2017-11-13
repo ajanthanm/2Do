@@ -1,0 +1,386 @@
+*{
+	border: none;
+	padding: 0;
+	margin:0;
+	/*font-family: "arial";*/
+	font-family: 'Roboto', 'arial', sans-serif;
+	outline: none;
+	user-select:none;
+}
+
+body {
+	background: #f4f7fe;
+	background-image: url('../img/no-tasks-banner.jpg');
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: 100px;
+}
+.nav-bar {
+	background: #fff;
+	width:auto;
+	padding: 10px;
+	/*box-shadow:0px 0px 10px rgba(0,0,0,0.1);*/
+}
+.nav-bar  .logo {
+	padding: 10px;
+}
+.logo > span {
+	display: inline-block;
+	padding: 5px;
+}
+.logo > .logo-part1 {
+	background: #3355f5;
+	color: white;
+	border-radius: 15px;
+	width: 27px;
+	height: 20px;
+	text-align: center;
+	line-height: 19px;
+	font-size: 16px;
+	font-weight: 600;
+	vertical-align: middle;
+}
+
+.logo > .logo-part2{
+	color: #191933;
+	font-weight: 900;
+	font-size: 23px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	align-items: stretch;
+	height: auto;
+	min-height: 500px;
+}
+.container > .task-input {
+	order:1;
+	flex-grow: 1;
+	flex-basis: 100px;
+	padding: 10px;
+	line-height: 2;
+
+
+}
+form.addtaskform{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	max-width: 250px;
+	margin: auto;
+}
+form.addtaskform h1{
+  margin-top: 100px; 
+	font-size: 20px;
+	font-weight: 900;
+}
+
+form.addtaskform label{
+	font-size: 16px;
+	color: #7e93fa;
+}
+
+form.addtaskform input{
+  background: none;
+}
+
+form.addtaskform input[type="text"]{
+	/*border-bottom: solid 2px rgba(0,0,0,0.1);*/
+	background: white;
+	font-size: 16px;
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+}
+
+form.addtaskform input[type="submit"]{
+	margin: 20px 0px;
+	padding: 15px;
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	background: #3454f5;
+	border-radius: 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+  position: relative;
+	cursor: pointer;
+}
+
+form.addtaskform select{
+	padding: 15px;
+	font-size:16px;
+  display: block;
+	border-radius: 3px;
+  background: white;
+  -webkit-appearance:button;
+	-moz-appearance:none;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   position: relative;
+}
+
+.container > .task-view {
+	order:2;
+	flex-grow:3;
+	display:flex;
+	flex-direction:row;
+	align-items:wrap;
+	flex-basis: 300px;
+}	
+
+.task-view h1{
+	font-size: 16px;
+	padding: 30px 20px 15px;
+}
+
+.task-view .todo{
+	order: 0;
+	flex-grow: 1;
+	max-width: 400px;
+	flex-basis: 100px;
+}
+.task-view .inprogress{
+	order: 1;
+	flex-grow: 1;
+		max-width: 400px;
+	flex-basis: 100px;
+}
+.task-view .done{
+	order: 2;
+	flex-grow: 1;
+		max-width: 400px;
+	flex-basis: 100px;
+}
+
+.task-view .task{
+  position: relative;
+	margin: 10px;
+	background: white;
+	padding: 15px;
+	border-radius: 3px;
+  box-shadow: 1px 1px 5px rgba(200,200,200,0.3);
+	word-wrap:break-word;
+}
+
+.task-view .task .priority {
+	margin-bottom: 30px;
+	opacity: 0.5;
+}
+.task-view .task .priority span{
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 20px;
+	display: inline-block;
+	font-weight: 900;
+	vertical-align: middle;
+}
+
+.task-view .task .priority span.part1{
+	background: #333;
+	width: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 20px;
+	color: white;
+  margin-right: 10px;
+}
+
+.task-view .critical .priority span.part1{
+	background: #ec4d32;
+}
+
+.task-view .high .priority span.part1{
+	background: #f7ab00;
+}
+
+.task-view .medium .priority span.part1{
+	background: #26b92f;
+}
+
+.task-view .low .priority span.part1{
+	background: #2694a7;
+}
+
+.task-view .task .priority span.part2 {
+	color: #333;
+}
+
+.task-view .task .action {
+	margin: 10px 0;
+  position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.task-view .task .action .next{
+	padding: 9px 20px;
+	font-size: 13px;
+	border-radius: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: white;
+	background: #7287f4;
+	border: solid 2px transparent;
+	transistion:all 0.5s ease;
+}
+#todo_tasks .task .action .next{
+	background: #f0fafa;
+	/*color: #afbbfa;*/
+	color: #677df0;
+}
+#todo_tasks .task:hover .action .next{
+	background: #677df0;
+	color: white;
+
+}
+
+#todo_tasks .task .action .next:hover{
+	background: #5670f3;
+}
+
+
+#inprogress_tasks .task .action .next {
+	background: #91d59b;
+}
+
+#inprogress_tasks .task:hover .action .next {
+	background: #7cc587;
+}
+
+#inprogress_tasks .task .action .complete:hover {
+	background: #6bb376;
+}
+
+#done_tasks .task .action .next{
+	background: #e9ebf0;
+	color:#686767;
+}
+
+#done_tasks .task {
+	opacity: 0.5;
+}
+
+.task-view #done_tasks .task p{
+	text-decoration: line-through;
+}
+
+.task-view .task .action .delete {
+	margin: 5px 10px;
+	padding: 5px;
+	width: 40px;
+	border-radius: 25px;
+	font-size: 21px;
+	color: grey;
+	background: #fafafa;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.task-view .task:hover .action .delete {
+	background: #eeeeee;
+
+}
+
+
+.task-view .task .action .delete:hover {
+	background: #aaa;
+		color: white;
+}
+.task-view .task .tast_title {
+	padding: 10px;
+	font-weight: 500;
+}
+
+
+.task-tooltip{
+	padding: 10px;
+	background: blue;
+	color: white;
+	margin: auto;
+	max-width: 250px;
+	border-radius: 3px;
+	text-align: center;
+	margin-bottom: 10px;
+	word-wrap: break-word;
+}
+
+.task-tooltip.warning{
+	background: red;
+}
+
+.task-tooltip.success{
+	background: green;
+}
+.task-tooltip.remove-task{
+	background: blue;
+	position: absolute;
+	background: rgba(0,0,0,1);
+	top: 10px;
+	right: 10px;
+}
+
+
+@media screen and (max-width: 1280px){
+	.task-view .task .priority{
+		margin-bottom: 0px;
+		margin-top: 40px;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	
+	.container {
+		flex-direction: column;
+	}
+	.container > .task-view{
+		flex-direction: column;
+		margin: auto;
+	}
+	.task-view .todo {
+		min-width: 400px;
+	}
+	
+	.task-view .inprogress {
+    min-width: 400px;
+	}
+	
+	.task-view .done{
+		min-width: 400px;
+	}
+	.container .task-input h1{
+    margin-top: auto;
+	}
+	.task-tooltip{
+		position: fixed !important;;
+		z-index: 5;
+		width: 250px;
+		height: auto;
+		right: calc(50% - 135px) !important;;
+		top: 10px !important;
+    
+	}
+}
+
+
+
+@media screen and (max-width: 500px){
+	
+	.task-view .todo {
+		min-width: 300px;
+	}
+	
+	.task-view .inprogress {
+		min-width: 300px;
+	}
+	
+	.task-view .done{
+		min-width: 300px;
+	}
+}
