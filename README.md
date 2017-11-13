@@ -22,7 +22,7 @@ This is a standalone application. Run `index.html` in any modern browsers to run
 | JS   | 40% |
 
 
-# How does it work
+### How does it work
 
 1. To Add New Task  Type the task title in the Task Name field and select the priority and click Add it will add the task to “To do”  list.
 2. You can click on start on any tasks in To do list to move them to “in progress” list.
@@ -33,7 +33,7 @@ This is a standalone application. Run `index.html` in any modern browsers to run
 
 Voila! It’s that simple!
 
-#How its made:
+### How its made:
 
 The “2Do” Task manager is developed like a small javascript library, like we can define the Task Lists and set the Priority levels in the library. 
 
